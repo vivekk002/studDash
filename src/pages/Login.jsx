@@ -279,6 +279,27 @@ function Login() {
           </form>
         </div>
       </div>
+
+      {/* Login Details Box */}
+      <div className="fixed bottom-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-lg p-4 border border-gray-200/50 dark:border-gray-700/50 max-w-xs">
+        <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+          Demo Login Details
+        </h3>
+        <div className="space-y-2 text-sm">
+          <div>
+            <span className="text-gray-500 dark:text-gray-400">Email:</span>
+            <span className="ml-2 text-primary-600 dark:text-primary-400">
+              alice@example.com
+            </span>
+          </div>
+          <div>
+            <span className="text-gray-500 dark:text-gray-400">Password:</span>
+            <span className="ml-2 text-primary-600 dark:text-primary-400">
+              Math33
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
