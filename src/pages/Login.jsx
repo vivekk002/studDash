@@ -110,15 +110,15 @@ function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-900 dark:to-gray-800 p-4">
-      <div className="fixed top-4 right-4">
+      <div className="fixed top-4 right-4 z-50">
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+          className="p-2.5 rounded-lg bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
           aria-label="Toggle dark mode"
         >
           {isDarkMode ? (
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -133,7 +133,7 @@ function Login() {
             </svg>
           ) : (
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -150,7 +150,7 @@ function Login() {
         </button>
       </div>
 
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md mb-24 sm:mb-0">
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 mb-4">
@@ -280,21 +280,37 @@ function Login() {
         </div>
       </div>
 
-      {/* Login Details Box */}
-      <div className="fixed bottom-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-lg p-4 border border-gray-200/50 dark:border-gray-700/50 max-w-xs">
-        <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-          Demo Login Details
-        </h3>
+      <div className="fixed bottom-0 left-0 right-0 sm:bottom-4 sm:left-auto sm:right-4 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-t-lg sm:rounded-lg shadow-lg p-3 sm:p-4 border-t border-l border-r sm:border border-gray-200/50 dark:border-gray-700/50 w-full sm:w-auto sm:max-w-xs">
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+            Demo Login Details
+          </h3>
+          <span className="text-xs text-gray-500 dark:text-gray-400">
+            (Click to copy)
+          </span>
+        </div>
         <div className="space-y-2 text-sm">
-          <div>
+          <div className="flex items-center justify-between">
             <span className="text-gray-500 dark:text-gray-400">Email:</span>
-            <span className="ml-2 text-primary-600 dark:text-primary-400">
+            <span
+              className="ml-2 text-primary-600 dark:text-primary-400 font-medium cursor-pointer hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
+              onClick={() => {
+                navigator.clipboard.writeText("alice@example.com");
+                showToast("Email copied to clipboard!", "success");
+              }}
+            >
               alice@example.com
             </span>
           </div>
-          <div>
+          <div className="flex items-center justify-between">
             <span className="text-gray-500 dark:text-gray-400">Password:</span>
-            <span className="ml-2 text-primary-600 dark:text-primary-400">
+            <span
+              className="ml-2 text-primary-600 dark:text-primary-400 font-medium cursor-pointer hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
+              onClick={() => {
+                navigator.clipboard.writeText("Math33");
+                showToast("Password copied to clipboard!", "success");
+              }}
+            >
               Math33
             </span>
           </div>
